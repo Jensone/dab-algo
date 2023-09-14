@@ -5,10 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DAB</title>
 </head>
 
 <body>
+    <h1 align="center">Retrait DAB</h1>
+    <p align="center">
+        Veuillez cliquer sur le bouton ci-dessous pour retirer de l'argent
+    </p>
+    <button onclick="cardChecker()">Commencer</button>
     <div class="app"></div>
 
     <script>
@@ -16,7 +21,6 @@
         const clientBalance = 1200
         const atmBalance = 1200
         const passCard = 9513
-        // let card = parseInt(prompt('Choisissez une carte : 1, 2 ou 3'))
         const app = document.querySelector(".app")
 
         // Functions
@@ -27,23 +31,15 @@
             3 : CB Non valide
         */
 
-        // Tout ce qui n'est pas un nombre et qui est au dessus de  3
+        /*
+        * Cette fonction permet de vérifier la validité de la carte :
+        * À l'aide d'une condition nous allons vérifier que la carte
+        * est 2 ou 1. Tous les autres scénario seront "CB Non valide".
+        * Lorsqu le résultat est 1 on lance la fonction passChecker()
+        */
         function cardChecker() {
-            // if (typeof(card) == 'number' && (card <= 3 || card >= 4)) {
-            // Méthode Alex      if (card === 2 || card === 1) {
-            //     if (card === 2) {
-            //         app.innerText='CB Bloquée'
-            //     } else {
-            //         app.innerText='CB Valide'
-            //         passChecker()
-            //     }
-            // }
-            // else {
-            //     app.innerText='CB Non valide'
+            let card = parseInt(prompt('Choisissez une carte : 1, 2 ou 3'))
 
-            // }
-
-            // Méthode François
             if (card === 2 || card != 1) {
                 if (card === 2) {
                     app.innerText = 'CB Bloquée'
@@ -56,6 +52,13 @@
             }
         }
 
+        /* 
+        * Cette fonction permet de vérifier le code de la carte :
+        * À l'aide d'une boucle nous allons permettre 3 essais
+        * Si un des 3 essais est valide, on met le compte de la boucle
+        * au maximum afin de l'arrêter et on lance la fonction pour
+        * choisir le montant à retirer.
+        */
         function passChecker() {
             app.innerText = 'CB Valide'
             for (let index = 0; index < 3; index++) {
@@ -65,7 +68,6 @@
                     amountChoice()
                 }
             }
-            console.log(box)
         }
 
         function amountChoice() {
