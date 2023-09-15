@@ -7,6 +7,7 @@ Conception d'un algorithme de DAB¹, sous forme de pseudo-code.
 ---
 
 ```text
+DEBUT
 Le client insère sa carte dans le distributeur
 Le processus de vérification de la carte est lancé
     SI la carte n'est pas conforme
