@@ -13,9 +13,9 @@ Le programme sera utilisé par 2 personnes (un admin et un assistant), l'objecti
 
 ---
 
-Algorithme :
+## Algorithme :
 
-DEBUT - Un(e) candidature postule
+DEBUT - Un(e) candidat(e) postule
 
 Afficher le formulaire de candidature
 
@@ -23,7 +23,7 @@ SI le formulaire est rempli et valide ALORS
     le formulaire est envoyé
     un numéro de dossier est généré et attribué au candidat
     un mail de confirmation est envoyé au candidat
-    un mail de confirmation est envoyé aux utilisateurs
+    un mail de notification est envoyé aux utilisateurs
     une notification est envoyée aux utilisateurs
 SINON
     le formulaire n'est pas envoyé
@@ -48,8 +48,6 @@ SI l'utilisateur modifie le statut d'une candidature ALORS
         un mail de refus est envoyé au candidat
         la candidature est archivée
     FIN SI
-SINON
-    le statut n'est pas modifié
 FIN SI
 
 SI la candidature est validée ALORS
